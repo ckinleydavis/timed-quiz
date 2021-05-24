@@ -1,24 +1,18 @@
 // Selects element by class
-var timer = document.querySelector(".btnTimer");
-console.log("timer: " + timer);
-var secondsLeft = 180;
-console.log("secondsLeft: " + secondsLeft);
+var timer = document.querySelector(".timer");
+var timeRemaining = 180;    // three minutes or 180 seconds
 
-function setTime() {
-    // Sets interval in variable
-    var timerInterval = setInterval(function() {
-      secondsLeft--;
-      timer.textContent = "Timer: " + secondsLeft;
-  
-      if(secondsLeft === 0) {
-        // Stops execution of action at set interval
-        clearInterval(timerInterval);
-        // Calls function to create and append image
-        // sendMessage();
-      }
-  
-    }, 1000);
-    console.log("timerInterval: " + timerInterval);
-  }
+function setTimer() {
+  var ticToc = setInterval(function() {
+    timeRemaining--;
+    timer.textContent = "Timer: " + timeRemaining;
 
-  setTime();
+    if(timeRemaining === 0) {
+      clearInterval(ticToc);  // once clock expires, clear timer
+    }
+
+  }, 1000);
+  console.log("timerInterval: " + ticToc);
+}
+
+  setTimer();
