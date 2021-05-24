@@ -1,7 +1,9 @@
-// Selects element by class
+var beginQuiz = document.querySelector(".btnStart");
 var timer = document.querySelector(".timer");
 var timeRemaining = 180;    // three minutes or 180 seconds
+// var quizQuestion = $('#quiz-question');
 
+// Timer Function
 function setTimer() {
   var ticToc = setInterval(function() {
     timeRemaining--;
@@ -15,4 +17,12 @@ function setTimer() {
   console.log("timerInterval: " + ticToc);
 }
 
-  setTimer();
+// When start button is clicked, begin timer ...
+beginQuiz.addEventListener( "click", setTimer );
+
+// When start button is clicked, show first question ...
+  // beginQuiz.on('click', function () {
+  //   quizQuestion.text("What is JavaScript?");
+  // });
+
+

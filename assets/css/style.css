@@ -42,6 +42,7 @@ header h1 {
 }
 
 .timer {
+  margin: 30px;
   font-size: 16px;
   padding: 0 30px;
 }
